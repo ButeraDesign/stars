@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+{{allStars | json}}
+
+<div class="col-md-8 col-md-offset-2 well">
+<table class="table well">
+  <tr>
+    <th>Star Name</th>
+    <th>Notes</th>
+  </tr>
+  <tr *ngFor='let star of allStars'>
+    <td>{{star.name}}</td>
+    <td># of notes here</td>
+  </tr>
+</table>
+<br><br>
+<app-notes></app-notes>
+</div>

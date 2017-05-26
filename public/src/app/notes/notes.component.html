@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+{{allStars | json}}
+
+<div class="col-md-8 col-md-offset-2 well">
+<table class="table well">
+  <tr>
+    <th>author</th>
+    <th>Note</th>
+  </tr>
+  <tr *ngFor='let star of allStars'>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<form (submit)="onSubmit()">
+
+
+  Your  Note:<br>
+  <textarea required
+  [(ngModel)]="item.discription"
+  #discription='ngModel' class="form-control" rows="4" cols="50" name="discription">
+  </textarea>
+
+  <input type="submit" value="Add Note">
+</form>
+</div>

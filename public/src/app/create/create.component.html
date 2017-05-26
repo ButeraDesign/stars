@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="col-md-6 col-md-offset-2 well">
+<form (submit)="onSubmit()">
+
+  Star Name:
+  <input type="text" name="starName"
+  required
+  minlength="2"
+  maxlength="24"
+  [(ngModel)]="item.starName"
+  #starName='ngModel' class="form-control"><br>
+
+  <div *ngIf=" (starName.errors && ( starName.dirty || starName.touched))"
+     class="alert alert-danger">
+    <div [hidden]="!starName.errors.required">
+      First Name is required
+    </div>
+    <div [hidden]="!starName.errors.minlength">
+      First Name must be at least 4 characters long.
+    </div>
+    <div [hidden]="!starName.errors.maxlength">
+      First Name cannot be more than 24 characters long.
+    </div>
+ </div>
+
+  Discription:<br>
+  <textarea required
+  [(ngModel)]="item.discription"
+  #discription='ngModel' class="form-control" rows="4" cols="50" name="discription">
+  </textarea>
+
+  <input type="hidden" value={{star.name}} name="author">
+
+
+  <input type="submit" value="Register Star">
+</form>
+</div>
